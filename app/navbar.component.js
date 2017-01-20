@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.ppic_path = '/public/images/profile_pic.jpg';
+var NavbarComponent = (function () {
+    function NavbarComponent() {
     }
-    AppComponent = __decorate([
+    NavbarComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<navbar></navbar>\n    \t\t",
+            selector: 'navbar',
+            template: "<div class=''>\n  \t\t\t\t<a routerLink=\"/profile\" routerLinkActive=\"active\">Profile</a>\n      \t\t\t<a routerLink=\"/education\" routerLinkActive=\"active\">Education</a>\n      \t\t\t<a routerLink=\"/experience\" routerLinkActive=\"active\">Experience</a>\n  \t\t\t </div>\n  \t\t\t <router-outlet></router-outlet>",
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NavbarComponent);
+    return NavbarComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.NavbarComponent = NavbarComponent;
+//# sourceMappingURL=navbar.component.js.map

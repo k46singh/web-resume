@@ -9,25 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var routing_module_1 = require('./routing.module');
-var app_component_1 = require('./app.component');
-var navbar_component_1 = require('./navbar.component');
+var router_1 = require('@angular/router');
 var profile_component_1 = require('./profile.component');
 var education_component_1 = require('./education.component');
 var experience_component_1 = require('./experience.component');
-var AppModule = (function () {
-    function AppModule() {
+var routes = [
+    { path: '', redirectTo: '/profile', pathMatch: 'full' },
+    { path: 'profile', component: profile_component_1.ProfileComponent },
+    { path: 'education', component: education_component_1.EducationComponent },
+    { path: 'experience', component: experience_component_1.ExperienceComponent }
+];
+var RoutingModule = (function () {
+    function RoutingModule() {
     }
-    AppModule = __decorate([
+    RoutingModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, routing_module_1.RoutingModule],
-            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, profile_component_1.ProfileComponent, education_component_1.EducationComponent, experience_component_1.ExperienceComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [router_1.RouterModule.forRoot(routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], RoutingModule);
+    return RoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.RoutingModule = RoutingModule;
+//# sourceMappingURL=routing.module.js.map

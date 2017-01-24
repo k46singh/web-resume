@@ -2,7 +2,7 @@ import { Component, trigger, state, transition, animate, style} from '@angular/c
 
 @Component({
   selector: 'profile',
-  template:`<div class="intro">
+  template:`<div class="profile">
       				<img class="ppic" src="{{ppic_path}}"/>
       				<br/>
       				<div>Karan Singh</div>
@@ -19,7 +19,7 @@ import { Component, trigger, state, transition, animate, style} from '@angular/c
         trigger('routeAnimation', [
            transition(":enter", [
           style({ opacity: 0 }),
-          animate('2s 1.5s', style({ opacity: 1}))
+          animate('2s', style({ opacity: 1}))
         ]),
         transition(":leave", [
           animate('1s', style({ opacity: 0}))

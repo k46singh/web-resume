@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var link_1 = require('./link');
 var NavbarComponent = (function () {
     function NavbarComponent() {
+        this.links = link_1.LINKS;
     }
     NavbarComponent = __decorate([
         core_1.Component({
             selector: 'navbar',
-            template: "<div class=''>\n  \t\t\t\t<a routerLink=\"/profile\" routerLinkActive=\"active\">Profile</a>\n      \t\t\t<a routerLink=\"/education\" routerLinkActive=\"active\">Education</a>\n      \t\t\t<a routerLink=\"/experience\" routerLinkActive=\"active\">Experience</a>\n  \t\t\t </div>\n  \t\t\t <router-outlet></router-outlet>",
+            template: "<div class=\"trigger\">\n\t  \t\t\t<div class='left'></div>\n\t  \t\t\t<div class='nav'>\n\t  \t\t\t\t<navlink *ngFor=\"let link of links\"\n\t\t\t\t      [link]=\"link\">\n\t\t\t\t    </navlink>\n\t  \t\t\t </div>\n  \t\t\t </div>",
         }), 
         __metadata('design:paramtypes', [])
     ], NavbarComponent);

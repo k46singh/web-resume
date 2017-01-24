@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var routing_module_1 = require('./routing.module');
 var app_component_1 = require('./app.component');
 var navbar_component_1 = require('./navbar.component');
+var navlink_component_1 = require('./navlink.component');
 var profile_component_1 = require('./profile.component');
 var education_component_1 = require('./education.component');
 var experience_component_1 = require('./experience.component');
@@ -22,7 +23,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, routing_module_1.RoutingModule],
-            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, profile_component_1.ProfileComponent, education_component_1.EducationComponent, experience_component_1.ExperienceComponent],
+            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, navlink_component_1.NavlinkComponent, profile_component_1.ProfileComponent, education_component_1.EducationComponent, experience_component_1.ExperienceComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

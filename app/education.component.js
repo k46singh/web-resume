@@ -15,16 +15,16 @@ var EducationComponent = (function () {
     EducationComponent = __decorate([
         core_1.Component({
             selector: 'education',
-            template: "<div>\n  \t\t\t    this is education.\n  \t\t\t</div>",
+            template: "<div class = \"intro\">\n  \t\t\t    this is education.\n  \t\t\t</div>",
             host: {
                 '[@routeAnimation]': 'true',
-                'style': 'display: block; height:80vh; width:100vh; background-color:green'
+                'style': 'display: block;'
             },
             animations: [
                 core_1.trigger('routeAnimation', [
                     core_1.transition(":enter", [
                         core_1.style({ opacity: 0 }),
-                        core_1.animate('2s 1.5s', core_1.style({ opacity: 1 }))
+                        core_1.animate('2s', core_1.style({ opacity: 1 }))
                     ]),
                     core_1.transition(":leave", [
                         core_1.animate('1s', core_1.style({ opacity: 0 }))

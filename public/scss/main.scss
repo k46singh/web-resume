@@ -1,34 +1,43 @@
-$badass: #7d66ff;
+//Class names are given using BEM standards.
+
+$mainColor: maroon;
+
+@mixin flexstyles($direction:row, $alignment:center, $justify:center, $wrap:wrap){
+  display: -webkit-flex;    
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignment;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  -webkit-flex-direction: $direction;
+  -webkit-align-items: $alignment;
+  -webkit-justify-content: $justify;
+  -webkit-flex-wrap: $wrap;
+}
 
 body { 
   margin: 0; 
-  background-color: $badass; 
+  background-color: $mainColor; 
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.profile{
+  display: flex !important;
+  @include flexstyles(column);
   width:100vw;
+  min-height: 100vh;
   font-size: 20px;
-
 }
 
 .ppic{
 	height:200px;
 	width:200px;
 	border-radius:200px;
-    border: 4px solid white;
-	justify-content:center;
-
+  border: 4px solid white;
 }
 
 .loading {
     opacity: 0;
-    transition: opacity .8s ease-in-out;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -36,6 +45,7 @@ body {
     left: 0;
     background: #000;
     z-index: -1;
+    transition: opacity .8s ease-in-out;
 }
 my-app:empty + .loading {
     opacity: 0.8;
@@ -67,19 +77,112 @@ my-app:empty + .loading h1:after {
 }
 
 .nav{
+  position:fixed;
 	display:block;
-	top:10px;
-	height:100px;
-	width:100px;
-	border-radius: 100px;
-	background-color:red;
-	opacity:1;
-	transition: width 2s, height 2s, opacity 2s;
+  top:calc(50% - 2.5vw);
+  left:2vw;
+  width:0;
+  height:0;
+  margin-top:0;
+  border-top: 2.5vw solid $mainColor;
+  border-left: 3vw solid rgba(0,0,0,0);
+  border-bottom: 2.5vw solid maroon;
+
+  background:rgba(0,0,0,0.7);
+	transition: all 1.5s;
+  a{
+    display:none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
 
 }
-.nav:hover{
-	height:200px;
-	width:300px;
-	opacity:0.4;
 
+.left{
+  position:fixed;
+  display:block;
+  width:2vw;
+  height:100vh;
+  left:0px;
+  background:rgba(0,0,0,0.7);
 }
+
+.trigger:hover .nav{
+  top:0;
+	height:100%;
+	width:20vw;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  @include flexstyles(column);
+  font-size: 20px;
+  a{
+    display:block;
+    opacity: 1;
+    transition: opacity 1s 0.5s linear, font-size 1s;
+  }
+  a:hover{
+    font-weight: bold;
+    font-size: 30px;
+  } 
+}
+
+experience{
+  width:95vw;
+  padding: 5vh 0vw 5vh 5vw;
+  display: flex !important;
+  @include flexstyles(row,center, space-around);
+  min-height: 90vh;
+}
+
+.company{
+  @include flexstyles(column);
+  width: 350px;
+  padding: 25px;
+  transition: all 1.5s;
+  font-size: 18px;
+  span{
+    font-weight: bold;
+  }
+  .image{
+    @include flexstyles();
+    height:150px;
+    width:300px;
+  }
+  img{
+    background-color: white;
+    box-shadow: 0 0 15px 10px white;
+  }
+  .company__title{
+    text-align: center;
+    padding-top: 10px;
+  }
+  ul{
+    visibility: hidden;
+    height:0px;
+    width:0px;
+    overflow:hidden;
+    text-align: left;
+    font-size:14px;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  &:hover{
+    width: 500px;
+    padding:0px;
+    background: rgba(55, 55, 55, 0.1);
+    ul{
+      visibility: visible;
+      width:400px;
+      height:125px;
+      opacity: 1; 
+      display: block;
+      overflow-y: auto;
+      li{
+        text-align: left;
+      }
+    }
+  }
+}
+

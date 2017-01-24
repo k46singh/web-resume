@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var companies_1 = require('./companies');
 var ExperienceComponent = (function () {
     function ExperienceComponent() {
+        this.companies = companies_1.COMPANIES;
     }
     ExperienceComponent = __decorate([
         core_1.Component({
             selector: 'experience',
-            template: "<div >\n  \t\t\t    this is experience.\n  \t\t\t </div>",
+            template: "<div class=\"company\" *ngFor=\"let company of companies\">\n              <div class='image'>\n  \t\t\t        <img src=\"{{company.img}}\" height=\"{{company.height}}\" width=\"{{company.width}}\"/>\n              </div>\n              <div class='company__title'>{{company.name}} - <span>{{company.position}}</span></div>\n              <ul>\n                <li *ngFor= \"let statement of company.description\">\n                  {{statement}}\n                </li>\n              </ul>\n            </div>",
             host: {
                 '[@routeAnimation]': 'true',
                 'style': 'display: block;'
@@ -24,7 +26,7 @@ var ExperienceComponent = (function () {
                 core_1.trigger('routeAnimation', [
                     core_1.transition(":enter", [
                         core_1.style({ opacity: 0 }),
-                        core_1.animate('2s 1.5s', core_1.style({ opacity: 1 }))
+                        core_1.animate('2s', core_1.style({ opacity: 1 }))
                     ]),
                     core_1.transition(":leave", [
                         core_1.animate('1s', core_1.style({ opacity: 0 }))

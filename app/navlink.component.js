@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.ppic_path = '/public/images/profile_pic.jpg';
+var link_1 = require("./link");
+var NavlinkComponent = (function () {
+    function NavlinkComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', link_1.Link)
+    ], NavlinkComponent.prototype, "link", void 0);
+    NavlinkComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<navbar></navbar>\n  \t\t\t<router-outlet></router-outlet>\n    \t\t",
+            selector: 'navlink',
+            template: "<a routerLink=\"{{link.route}}\" routerLinkActive=\"active\">{{link.text}}</a>",
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NavlinkComponent);
+    return NavlinkComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.NavlinkComponent = NavlinkComponent;
+//# sourceMappingURL=navlink.component.js.map

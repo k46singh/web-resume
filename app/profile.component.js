@@ -16,7 +16,7 @@ var ProfileComponent = (function () {
     ProfileComponent = __decorate([
         core_1.Component({
             selector: 'profile',
-            template: "<div class=\"intro\">\n      \t\t\t\t<img class=\"ppic\" src=\"{{ppic_path}}\"/>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>Karan Singh</div>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>Front-End Developer</div>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>University of Waterloo</div>\n      \t\t\t</div>",
+            template: "<div class=\"profile\">\n      \t\t\t\t<img class=\"ppic\" src=\"{{ppic_path}}\"/>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>Karan Singh</div>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>Front-End Developer</div>\n      \t\t\t\t<br/>\n      \t\t\t\t<div>University of Waterloo</div>\n      \t\t\t</div>",
             host: {
                 '[@routeAnimation]': 'true',
                 'style': 'display: block;'
@@ -25,7 +25,7 @@ var ProfileComponent = (function () {
                 core_1.trigger('routeAnimation', [
                     core_1.transition(":enter", [
                         core_1.style({ opacity: 0 }),
-                        core_1.animate('2s 1.5s', core_1.style({ opacity: 1 }))
+                        core_1.animate('2s', core_1.style({ opacity: 1 }))
                     ]),
                     core_1.transition(":leave", [
                         core_1.animate('1s', core_1.style({ opacity: 0 }))
